@@ -162,7 +162,7 @@ def optimize_hyperparameters(model, x_train, y_train):
         "feature_selection__k": range(1, 11), 
         "classifier__C": [0.001, 0.01, 0.1, 1, 10, 100], 
         "classifier__solver": ["liblinear"],
-        'classifier__max_iter': [100,200],
+       
     }
     search = GridSearchCV(model, param_grid, n_jobs=-1, cv=10, scoring="balanced_accuracy", refit=True )
     search.fit(x_train, y_train)
